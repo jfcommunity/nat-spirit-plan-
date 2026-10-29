@@ -183,9 +183,18 @@ details.why a{font-weight:700}
 .example--ig{background:var(--terra-soft)}
 .example .mock{max-width:520px}
 .example .lead{margin-top:6px;margin-bottom:22px}
-.imgwrap{position:relative}
-.imgwrap img{height:auto;aspect-ratio:1/1}
-.imgwrap .ov{position:absolute;left:15%;right:15%;top:4%;text-align:center;font:700 clamp(1.05rem,2.6vw,1.45rem)/1.15 var(--font-display);color:#2F2829}
+.car{position:relative}
+.car-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.car-track::-webkit-scrollbar{display:none}
+.car-slide{flex:0 0 100%;scroll-snap-align:start;position:relative}
+.car-slide img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+.car-slide .ov{position:absolute;left:15%;right:15%;top:4%;text-align:center;font:700 clamp(1.05rem,2.6vw,1.45rem)/1.15 var(--font-display);color:#2F2829}
+.car-btn{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,251,242,.92);color:#2F2829;font:700 1.5rem/1 var(--font-display);box-shadow:0 2px 8px rgba(0,0,0,.25);cursor:pointer;padding:0 0 3px}
+.car-prev{left:10px}.car-next{right:10px}
+.car-btn[disabled]{opacity:0;pointer-events:none}
+.car-dots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:6px}
+.car-dots i{width:7px;height:7px;border-radius:50%;background:rgba(47,40,41,.35)}
+.car-dots i.on{background:#2F2829}
 /* Aperçus */
 .previews>div{min-width:0}
 .previews{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,3vw,36px);align-items:start}
@@ -492,7 +501,16 @@ footer.end{padding-block:34px;color:var(--muted);font-size:.9rem}
         
         <article class="mock mock--ig">
           <header><div class="av">N</div><div><strong>natspirit_official</strong><span>Natspirit</span></div></header>
-          <div class="imgwrap"><img src="meme.jpg" alt="Illustration : un client touche du bout du doigt une assiette creuse céladon fumante et grimace, sous le regard amusé du serveur" width="1080" height="1080"><span class="ov">Attention, l'assiette est chaude.</span></div>
+          <div class="car" id="car">
+            <div class="car-track" id="carTrack" tabindex="0" aria-label="Carrousel de l'exemple de post Instagram">
+              <div class="car-slide"><img src="meme1.jpg" alt="Illustration : le serveur pose un bol céladon fumant devant un client curieux dont le doigt s'approche" width="1080" height="1080"><span class="ov">Attention, l'assiette est chaude.</span></div>
+              <div class="car-slide"><img src="meme.jpg" alt="Illustration : le client touche du bout du doigt le bol céladon fumant et grimace, sous le regard amusé du serveur" width="1080" height="1080"><span class="ov">Le client la touche.</span></div>
+              <div class="car-slide"><img src="meme3.jpg" alt="Illustration : gros plan sur le bol céladon fumant, une main s'éloigne vite" width="1080" height="1080"><span class="ov">On ne peut rien contre la curiosité.</span></div>
+            </div>
+            <button type="button" class="car-btn car-prev" aria-label="Image précédente">‹</button>
+            <button type="button" class="car-btn car-next" aria-label="Image suivante">›</button>
+            <div class="car-dots" id="carDots" aria-hidden="true"></div>
+          </div>
           <div class="txt" style="padding-top:14px">
             <p><strong>Attention, l'assiette est chaude. <em>Le client la touche.</em></strong></p>
             <p>On ne peut rien contre la curiosité. On peut juste vous faire de jolies assiettes, en quatre couleurs avec la collection Origin.</p><p>Le catalogue ? Dites juste « bol » en message privé.</p>
@@ -775,6 +793,28 @@ footer.end{padding-block:34px;color:var(--muted);font-size:.9rem}
       try{target.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){target.scrollIntoView();}
     });
   });
+
+  /* Carrousel de l'exemple Instagram */
+  try{
+    var tr=document.getElementById('carTrack'),dt=document.getElementById('carDots');
+    if(tr&&dt){
+      var n=tr.children.length,cur=0;
+      var pv=document.querySelector('.car-prev'),nx=document.querySelector('.car-next');
+      for(var q=0;q<n;q++){dt.appendChild(document.createElement('i'));}
+      var upd=function(){
+        cur=Math.round(tr.scrollLeft/tr.clientWidth);
+        Array.prototype.forEach.call(dt.children,function(d,k){d.className=k===cur?'on':'';});
+        pv.disabled=cur<=0;nx.disabled=cur>=n-1;
+      };
+      var go=function(k){tr.scrollTo({left:Math.max(0,Math.min(n-1,k))*tr.clientWidth,behavior:'smooth'});};
+      pv.addEventListener('click',function(){go(cur-1);});
+      nx.addEventListener('click',function(){go(cur+1);});
+      tr.addEventListener('scroll',upd);
+      tr.addEventListener('keydown',function(ev){if(ev.key==='ArrowRight'){go(cur+1);}if(ev.key==='ArrowLeft'){go(cur-1);}});
+      window.addEventListener('resize',upd);
+      upd();
+    }
+  }catch(e){}
 
   /* Lien actif dans la navigation */
   try{
