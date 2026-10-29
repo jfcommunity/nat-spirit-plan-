@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Natspirit sur les réseaux</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Concept : la palette de la gamme (terracotta, céladon, crème, carbone) en grands aplats, des formes organiques comme celles du logo, les photos de studio de Natspirit en vedette. */
+:root{
+  --bg:#F6EFDF; --surface:#FFFBF2; --ink:#2F2829; --muted:#665A59; --line:#E3D8C2;
+  --terra:#A84F34; --terra-soft:#EBC3AF; --celadon:#A9C3A0; --celadon-soft:#D5E3CE;
+  --ochre:#E8A93C; --ochre-soft:#F5DDA8; --carbon:#3B3436; --cream:#F6EFDF; --emerald:#2F5D56;
+  --focus:#2F5D56;
+  --font-display:'Quicksand','Trebuchet MS',system-ui,sans-serif;
+  --font-body:'Open Sans','Segoe UI',system-ui,sans-serif;
+  --blob:62% 38% 46% 54% / 55% 45% 55% 45%;
+  --blob2:41% 59% 52% 48% / 48% 40% 60% 52%;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1F1B1C; --surface:#2A2425; --ink:#F2E9D6; --muted:#C2B5A5; --line:#443A3B;
+    --celadon-soft:#34443A; --terra-soft:#5A3328; --ochre-soft:#4F3E1C; --focus:#A9C3A0;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1F1B1C; --surface:#2A2425; --ink:#F2E9D6; --muted:#C2B5A5; --line:#443A3B;
+  --celadon-soft:#34443A; --terra-soft:#5A3328; --ochre-soft:#4F3E1C; --focus:#A9C3A0;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--font-body)}
+h1,h2,h3,h4{font-family:var(--font-display);text-wrap:balance;line-height:1.12;margin:0}
+p{margin:0}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{padding-block:clamp(48px,8vw,96px)}
+.band--surface{background:var(--surface)}
+.band--celadon{background:var(--celadon);color:#1F2A24}
+.band--terra{background:var(--terra);color:#FBF3E4}
+.band--carbon{background:var(--carbon);color:#F6EFDF}
+.eyebrow{font:700 .78rem/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;opacity:.85}
+h2{font-size:clamp(1.9rem,4.4vw,3rem);font-weight:600;max-width:20ch}
+.lead{font-size:clamp(1.05rem,1.8vw,1.25rem);max-width:60ch;margin-top:18px}
+.head{margin-bottom:clamp(28px,5vw,48px)}
+
+/* En-tête */
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px;flex-wrap:wrap}
+.wm{font:500 1.6rem/1 var(--font-display);display:inline-flex;align-items:center;gap:10px;letter-spacing:.02em}
+.wm i{font-style:normal;background:var(--terra);color:#FBF3E4;padding:.42em .85em .5em;border-radius:var(--blob);font-weight:600}
+.top small{font-size:.9rem;color:var(--muted)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,5vw,64px);align-items:center;padding-block:clamp(24px,5vw,56px) clamp(48px,8vw,88px)}
+.hero h1{font-size:clamp(2.3rem,6vw,4.4rem);font-weight:600;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--terra)}
+.hero .lead{margin-top:22px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;border:2px solid var(--ink);text-decoration:none;font-weight:700;font-size:.95rem;background:transparent}
+.btn--fill{background:var(--terra);border-color:var(--terra);color:#FBF3E4}
+.collage{position:relative;aspect-ratio:1/1.02;max-width:520px;width:100%;justify-self:center}
+.collage img{position:absolute;object-fit:cover;display:block}
+.collage .c1{inset:0 0 18% 14%;width:86%;height:82%;border-radius:var(--blob)}
+.collage .c2{left:0;bottom:0;width:44%;height:44%;border-radius:var(--blob2);border:6px solid var(--bg)}
+.collage .c3{right:2%;bottom:3%;width:30%;height:30%;border-radius:50%;border:6px solid var(--bg)}
+
+/* En bref */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{border-radius:22px;padding:28px 26px;min-width:0}
+.card h3{font-size:1.35rem;font-weight:700;margin-bottom:10px}
+.card--c{background:var(--celadon-soft)}
+.card--t{background:var(--terra-soft)}
+.card--o{background:var(--ochre-soft)}
+.card .big{font:700 2.6rem/1 var(--font-display);margin-bottom:12px;display:block}
+
+/* Onglets */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.tab{border:2px solid currentColor;background:transparent;border-radius:999px;padding:10px 20px;font-weight:700}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.panel{border-radius:30px;padding:clamp(24px,4vw,44px);display:grid;grid-template-columns:1fr;gap:clamp(20px,4vw,48px);min-width:0}
+.panel--li{background:var(--celadon);color:#1F2A24}
+.panel--ig{background:var(--terra);color:#FBF3E4}
+.panel h3{font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:6px}
+.panel dl{margin:22px 0 0;display:grid;gap:22px 36px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.panel dt{font:700 .78rem/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;opacity:.85}
+.panel dd{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{border-radius:999px;padding:6px 14px;font-size:.88rem;font-weight:600;background:rgba(255,255,255,.55);color:#1F2A24}
+.panel--ig .chip{background:rgba(255,255,255,.2);color:#FBF3E4}
+.panel figure{margin:0;display:flex;align-items:center;justify-content:center}
+.panel figure img{width:100%;max-width:340px;aspect-ratio:1/1.12;object-fit:cover;border-radius:var(--blob)}
+.panel--ig figure img{border-radius:var(--blob2)}
+
+/* Chemin */
+.path{margin-top:clamp(36px,6vw,64px);display:grid;gap:14px}
+.lane{display:grid;grid-template-columns:150px repeat(3,1fr) ;gap:10px;align-items:stretch}
+.lane b{font:700 .9rem/1.3 var(--font-display);display:flex;align-items:center}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px 14px;font-size:.92rem;position:relative;min-width:0}
+.step + .step::before{content:"→";position:absolute;left:-17px;top:50%;transform:translateY(-50%);font-weight:700;color:var(--terra)}
+.goal{background:var(--ochre);color:#2B2111;border-radius:18px;padding:16px 20px;font-weight:700;font-family:var(--font-display);text-align:center}
+
+/* Forfait */
+.switch{display:inline-flex;border:2px solid #FBF3E4;border-radius:999px;padding:3px;margin-bottom:26px;gap:2px}
+.switch button{border:0;background:transparent;border-radius:999px;padding:9px 18px;font-weight:700;color:#FBF3E4}
+.switch button[aria-pressed="true"]{background:#FBF3E4;color:var(--terra)}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.num{background:rgba(251,243,228,.12);border-radius:22px;padding:22px 24px;min-width:0}
+.num strong{display:block;font:700 3.2rem/1 var(--font-display)}
+.num span{display:block;margin-top:8px}
+.num small{display:block;opacity:.85;margin-top:2px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+.note{background:rgba(251,243,228,.12);border-radius:22px;padding:22px 24px}
+.note h3{font-size:1.15rem;margin-bottom:8px}
+.note ul{margin:0;padding-left:1.15em}
+
+/* Façon de parler */
+.two{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,5vw,56px);align-items:start}
+.steps{display:grid;gap:12px;margin-top:22px}
+.steps div{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px 16px}
+.steps b{width:44px;height:44px;display:grid;place-items:center;border-radius:var(--blob);background:var(--terra);color:#FBF3E4;font-family:var(--font-display)}
+.rules{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px}
+.rules li{padding:12px 16px;border-radius:16px;background:var(--celadon-soft)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.f{border:2px solid var(--ink);background:transparent;border-radius:999px;padding:7px 16px;font-weight:700;font-size:.92rem}
+.f[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.hooks{display:grid;gap:12px}
+.hook{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px 16px}
+.hook p{font-family:var(--font-display);font-weight:600;font-size:1.08rem;line-height:1.35}
+.hook small{display:block;color:var(--muted);font-size:.8rem;margin-top:4px}
+.copy{border:2px solid var(--ink);background:transparent;border-radius:999px;padding:6px 14px;font-size:.85rem;font-weight:700;white-space:nowrap}
+.copy.ok{background:var(--emerald);border-color:var(--emerald);color:#F6EFDF}
+
+/* Curseur de présence */
+.dial{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(20px,4vw,48px);align-items:start}
+.dial-ctl label{font:700 1.05rem var(--font-display);display:block;margin-bottom:14px}
+.dial input[type=range]{width:100%;accent-color:var(--terra);height:30px;cursor:pointer}
+.dial-scale{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:.78rem;color:var(--muted);margin-top:6px;text-align:center}
+.dial-out{border-radius:26px;padding:26px;background:var(--celadon-soft);min-width:0}
+.dial-out h3{font-size:1.5rem;margin-bottom:8px}
+.dial-out .tagr{display:inline-block;background:var(--terra);color:#FBF3E4;border-radius:999px;padding:3px 12px;font-size:.78rem;font-weight:700;margin-bottom:10px}
+.dial-out .ex{margin:14px 0;padding:14px 16px;border-radius:16px;background:var(--surface);font-family:var(--font-display);font-weight:600}
+.dial-out .row{margin-top:8px}
+/* Séries Instagram */
+.series{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.serie{border-radius:24px;padding:24px;min-width:0}
+.s1{background:var(--terra-soft)}.s2{background:var(--celadon-soft)}.s3{background:var(--ochre-soft)}.s4{background:var(--carbon);color:#F6EFDF}
+.serie .tag{display:block;font:700 .72rem/1.2 var(--font-body);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;opacity:.85}
+.serie h3{font-size:1.35rem;margin-bottom:8px}
+.serie .q{margin-top:14px;font:600 1.02rem/1.35 var(--font-display)}
+.fmts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:16px}
+.fmt{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px 16px;min-width:0}
+.fmt b{font-family:var(--font-display);display:block;margin-bottom:2px}
+.fmt small{color:var(--muted)}
+.drawbox{margin-top:22px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.drawn{font:600 1.1rem/1.35 var(--font-display);padding:14px 18px;border-radius:18px;background:var(--ochre-soft);flex:1;min-width:240px}
+/* Navigation et détails */
+.nav{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;gap:8px;overflow-x:auto;padding-block:10px;scrollbar-width:none}
+.nav .wrap::-webkit-scrollbar{display:none}
+.nav a{white-space:nowrap;text-decoration:none;font-weight:700;font-size:.9rem;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
+.nav a.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+section[id]{scroll-margin-top:64px}
+details.why{margin-top:14px;border-top:1px solid rgba(0,0,0,.2);padding-top:10px}
+.s4 details.why{border-top-color:rgba(255,255,255,.35)}
+details.why summary{cursor:pointer;font-weight:700}
+details.why p{margin-top:8px;font-size:.92rem}
+details.why a{font-weight:700}
+.who{margin-top:12px;font-size:.92rem}
+.fiches{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:16px}
+.fiche{border-radius:22px;padding:22px;min-width:0}
+.fiche b{display:block;font:700 1.6rem/1.1 var(--font-display);margin-bottom:10px}
+.fiche span{font-size:.95rem}
+.f1{background:#A84F34;color:#FBF3E4}.f2{background:#A9C3A0;color:#1F2A24}.f3{background:#3B3436;color:#F6EFDF}.f4{background:#E9E0C5;color:#2F2829}
+.mbtn{width:100%;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 16px;font:700 1.15rem var(--font-display)}
+.example{margin-top:56px;border-radius:30px;padding:clamp(20px,4vw,40px)}
+.example--li{background:var(--celadon-soft)}
+.example--ig{background:var(--terra-soft)}
+.example .mock{max-width:520px}
+.example .lead{margin-top:6px;margin-bottom:22px}
+/* Aperçus */
+.previews>div{min-width:0}
+.previews{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,3vw,36px);align-items:start}
+.mock{background:#FFFBF2;color:#2F2829;border-radius:22px;overflow:hidden;box-shadow:0 18px 40px rgba(31,42,36,.18);min-width:0}
+.mock header{display:flex;gap:12px;align-items:center;padding:16px 18px}
+.mock .av{width:44px;height:44px;border-radius:50%;background:var(--terra);color:#FBF3E4;display:grid;place-items:center;font:700 1rem var(--font-display);flex:none}
+.mock header span{display:block;font-size:.8rem;color:#6B5F5E}
+.mock .txt{padding:0 18px 16px;font-size:.95rem}
+.mock .txt p+p{margin-top:10px}
+.mock img{display:block;width:100%;aspect-ratio:4/3.4;object-fit:cover}
+.mock--ig img{aspect-ratio:1/1}
+.mock footer{padding:12px 18px 16px;font-size:.78rem;color:#6B5F5E}
+.cap{margin-top:14px;font-size:.9rem}
+.label{font:700 .78rem/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;display:block}
+
+/* Calendrier */
+.months{display:grid;gap:34px}
+.month h3{font-size:1.5rem;margin-bottom:14px}
+.month h3 span{font:600 .95rem var(--font-body);color:var(--muted);margin-left:8px}
+.weeks{display:grid;gap:10px}
+.wk{display:grid;grid-template-columns:130px repeat(3,1fr);gap:10px;align-items:stretch}
+.wk time{font:700 .95rem/1.3 var(--font-display);display:flex;align-items:center}
+.it{border-radius:14px;padding:10px 12px;font-size:.9rem;min-width:0;background:var(--surface);border:1px solid var(--line)}
+.it small{display:block;font-weight:700;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px}
+.it--li{background:var(--celadon-soft);border-color:transparent}
+.it--ig{background:var(--terra-soft);border-color:transparent}
+.it--re{background:var(--ochre-soft);border-color:transparent}
+.it--none{background:transparent;border:1px dashed var(--line);color:var(--muted)}
+.need{display:inline-block;margin-top:6px;background:var(--ink);color:var(--bg);border-radius:999px;padding:2px 10px;font-size:.72rem;font-weight:700}
+.pause{grid-column:2/-1;border-radius:14px;padding:10px 14px;background:transparent;border:1px dashed var(--line);color:var(--muted);font-size:.9rem}
+.rhythm{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:36px}
+.rhythm div{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px 14px;font-size:.88rem;min-width:0}
+.rhythm b{display:block;font-family:var(--font-display);margin-bottom:4px}
+
+/* Mesure */
+.metric{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+/* Besoin de toi */
+.todo{list-style:none;padding:0;margin:0;display:grid;gap:10px;max-width:760px}
+.todo li{display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:start;background:rgba(246,239,223,.1);border-radius:16px;padding:14px 16px}
+.todo input{width:22px;height:22px;margin-top:3px;accent-color:var(--ochre)}
+.todo label{cursor:pointer}
+.todo .done label{text-decoration:line-through;opacity:.6}
+.prog{margin:0 0 22px;font-weight:700}
+footer.end{padding-block:34px;color:var(--muted);font-size:.9rem}
+.mail{font-weight:700;user-select:all}
+
+@media (max-width:860px){
+  .hero,.panel,.two,.previews,.split{grid-template-columns:1fr}
+  .trio,.nums,.metric,.dial{grid-template-columns:1fr}
+  .collage{max-width:420px}
+  .lane{grid-template-columns:1fr}
+  .step + .step::before{content:"↓";left:50%;top:-13px;transform:translateX(-50%)}
+  .wk{grid-template-columns:1fr}
+  .pause{grid-column:1}
+  .rhythm{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap top">
+  <span class="wm">Nat <i>Spirit</i></span>
+  <small>Plan de communication · 9 novembre 2026 – 8 février 2027</small>
+</div>
+
+<nav class="nav" aria-label="Sections de la page"><div class="wrap">
+  <a href="#publics">Cibles</a><a href="#forfait">Forfait</a><a href="#presence">LinkedIn</a><a href="#format">Instagram</a><a href="#calendrier">Calendrier</a><a href="#mesure">Mesure</a>
+</div></nav>
+
+<header class="wrap hero">
+  <div>
+    <p class="eyebrow">LinkedIn et Instagram</p>
+    <h1>Trois mois pour que les bonnes personnes <em>pensent Natspirit</em>.</h1>
+    <p class="lead">Eric, voici ce qui va se passer entre le 9 novembre et le 8 février : qui on veut toucher, ce qu'on publie, comment on en parle, et ce que tu reçois. Tu n'as rien à rédiger : tu lis, tu valides, je publie.</p>
+  </div>
+  <div class="collage" aria-hidden="true">
+    <img class="c1" src="celadon.jpg" alt="" width="1000" height="1033">
+    <img class="c2" src="terracotta.jpg" alt="" width="841" height="1423">
+    <img class="c3" src="silicone.jpg" alt="" width="1000" height="1052">
+  </div>
+</header>
+
+<section class="band band--surface" id="bref">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">En bref</p>
+      <h2>Ce qu'on cherche, pour qui, et ton temps.</h2>
+    </div>
+    <div class="trio">
+      <article class="card card--c">
+        <span class="big">1</span>
+        <h3>Des demandes dans ta boîte mail</h3>
+        <p>Le résultat qui compte : des demandes de devis et des demandes d'échantillons qui arrivent à contact@nat-spirit.com, et du mouvement du côté des distributeurs.</p>
+      </article>
+      <article class="card card--t">
+        <span class="big">2</span>
+        <h3>Deux publics, deux réseaux</h3>
+        <p>LinkedIn parle aux distributeurs : marketing, achats, commerciaux. Instagram parle aux établissements : restaurants, hôtels, traiteurs, collectivités.</p>
+      </article>
+      <article class="card card--o">
+        <span class="big">3</span>
+        <h3>Toi, tu valides</h3>
+        <p>Je rédige, tu valides dans Notion, je publie. Tu n'as pas à écrire sur LinkedIn : je te prépare chaque texte avec son visuel.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="publics">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Nos cibles</p>
+      <h2>Deux publics, deux façons de leur parler.</h2>
+      <p class="lead">Un distributeur peut mettre Natspirit dans son catalogue. Un établissement peut demander à son distributeur de le faire. On travaille les deux.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Choisir un public">
+      <button class="tab" role="tab" id="tab-li" aria-selected="true" aria-controls="pan-li">LinkedIn · Distributeurs</button>
+      <button class="tab" role="tab" id="tab-ig" aria-selected="false" aria-controls="pan-ig">Instagram · Établissements</button>
+    </div>
+
+    <div class="panel panel--li" role="tabpanel" id="pan-li" aria-labelledby="tab-li">
+      <div>
+        <h3>LinkedIn : les distributeurs</h3>
+        <p>Les cinq premiers : Chomette, Henri Julien, Groupe Comptoir de Bretagne, Gafic, Matfer Bourgeat.</p>
+        <dl>
+          <div><dt>Qui on veut toucher</dt><dd><div class="chips"><span class="chip">Marketing et catalogue</span><span class="chip">Achats</span><span class="chip">Commerciaux</span><span class="chip">Direction, plus rarement</span></div></dd></div>
+          <div><dt>Ce qu'ils cherchent</dt><dd>Des nouveautés qui se montrent en une photo, des références claires, deux ou trois arguments simples à donner en visite.</dd></div>
+          <div><dt>Ce qui peut les freiner</dt><dd>Un fournisseur qu'ils connaissent peu, et la crainte de promettre à un client ce qu'ils ne peuvent pas vérifier. D'où l'importance de contenus simples et documentés.</dd></div>
+          <div><dt>Ce qu'on leur montre</dt><dd>La gamme et ses couleurs, les formats pour le service, le studio de création, un mode d'emploi pour chaque matière.</dd></div>
+          <div><dt>Ton et rythme</dt><dd>Vouvoiement léger, phrases courtes, une pointe d'humour. Pas de grands discours : ce sont les objets qui parlent. Un post par semaine, et deux sessions d'engagement par semaine : je commente les publications de nos cibles pour qu'elles découvrent Natspirit.</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel panel--ig" role="tabpanel" id="pan-ig" aria-labelledby="tab-ig" hidden>
+      <div>
+        <h3>Instagram : les établissements</h3>
+        <p>Ceux qui commandent déjà chez un distributeur sont les plus utiles : ils peuvent lui demander de référencer Natspirit.</p>
+        <dl>
+          <div><dt>Qui on veut toucher</dt><dd><div class="chips"><span class="chip">Restaurants</span><span class="chip">Hôtels</span><span class="chip">Traiteurs</span><span class="chip">Collectivités</span><span class="chip">Outdoor</span></div></dd></div>
+          <div><dt>Ce qu'ils cherchent</dt><dd>Une table qui a du caractère, des formats pratiques pour le service, des idées de dressage.</dd></div>
+          <div><dt>Ce qui peut les freiner</dt><dd>Le prix, et la question « est-ce que ça ira avec mon concept ? ». Les collectivités (cantines, crèches, résidences seniors) demandent plus de documents : on les aborde une fois ceux-ci en main.</dd></div>
+          <div><dt>Ce qu'on leur montre</dt><dd>Des scènes de service qu'ils reconnaissent, avec la gamme dedans, des couleurs qui ont du caractère, des dressages en situation.</dd></div>
+          <div><dt>Ton et rythme</dt><dd>Vouvoiement chaleureux, de l'humour, le visuel d'abord. Un post par semaine, deux Reels par mois, huit stories par semaine, deux sessions d'engagement par semaine.</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="path" aria-label="Le chemin d'une demande">
+      <p class="eyebrow" style="margin-bottom:0">Le chemin d'une demande</p>
+      <div class="lane"><b>LinkedIn</b><div class="step">Le marketing d'un distributeur découvre la gamme</div><div class="step">Il pense à Natspirit pour le prochain catalogue</div><div class="step">Les achats puis les commerciaux prennent le relais</div></div>
+      <div class="lane"><b>Instagram</b><div class="step">Un établissement découvre un produit</div><div class="step">Il demande à son distributeur de le proposer</div><div class="step">Le distributeur te contacte</div></div>
+      <div class="goal">Dans les deux cas : une demande de devis ou d'échantillons dans ta boîte mail</div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--terra" id="forfait">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Ton accompagnement</p>
+      <h2>Ce que comprend ton forfait.</h2>
+      <p class="lead">Du 9 novembre 2026 au 8 février 2027, soit 13 semaines.</p>
+    </div>
+    <div class="switch" role="group" aria-label="Affichage">
+      <button type="button" id="m-rythme" aria-pressed="true">Le rythme</button>
+      <button type="button" id="m-total" aria-pressed="false">Le total sur 3 mois</button>
+    </div>
+    <div class="nums" id="nums"></div>
+    <div class="split">
+      <div class="note">
+        <h3>Ce que je fais</h3>
+        <ul>
+          <li>Je rédige les contenus et je choisis les visuels dans ta photothèque.</li>
+          <li>Je publie après ta validation.</li>
+          <li>Je réponds aux commentaires et je note les messages qui demandent un devis.</li>
+          <li>Je te fais un bilan d'une page le 8 décembre, le 8 janvier et le 8 février.</li>
+        </ul>
+      </div>
+      <div class="note">
+        <h3>Ce qui reste chez toi</h3>
+        <ul>
+          <li>Répondre aux demandes de devis et d'échantillons.</li>
+          <li>Envoyer les échantillons.</li>
+          <li>La suite avec les distributeurs et la formation de leurs commerciaux.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class='band band--surface' id='presence'>
+  <div class='wrap'>
+    <div class='head'>
+      <p class='eyebrow'>Ta place sur LinkedIn</p>
+      <h2>Tu choisis combien tu te montres.</h2>
+      <p class='lead'>Pas de pression : on peut commencer tout doux, monter si ça te plaît ou redescendre. Rien n'est publié sans ton accord, et on fait le point au bout d'un mois.</p>
+    </div>
+    <div class='dial'>
+      <div class='dial-ctl'>
+        <label for='lvl'>Déplace le curseur</label>
+        <input type='range' id='lvl' min='1' max='4' step='1' value='2' aria-describedby='lvl-out'>
+        <div class='dial-scale' aria-hidden='true'><span>Page seule</span><span>Ta voix</span><span>Ton profil, 1 post par mois</span><span>Ton profil, 2 posts par mois</span></div>
+      </div>
+      <div class='dial-out' id='lvl-out' aria-live='polite'></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="parler">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Comment on parle</p>
+      <h2>Parler sur LinkedIn sans se forcer.</h2>
+      <p class="lead">LinkedIn peut être trop sérieux, trop « moi-je ». Pas chez Natspirit : on y parle avec légèreté et humour, sans « ravi d'annoncer », et ce sont les objets qui sont les stars. La façon de publier (ton profil ou la page Natspirit) se décide ensemble.</p>
+    </div>
+    <div class="two">
+      <div>
+        <h3 style="font-size:1.5rem">Trois étapes, aucune rédaction pour toi</h3>
+        <div class="steps">
+          <div><b>1</b><span>Je rédige le texte et je propose le visuel.</span></div>
+          <div><b>2</b><span>Tu lis dans Notion et tu valides, tu commentes ou tu refuses.</span></div>
+          <div><b>3</b><span>Je publie et je te dis ce que ça a donné.</span></div>
+        </div>
+        <ul class="rules">
+          <li><strong>Avec le sourire.</strong> Une touche d'humour, on ne se prend pas au sérieux.</li><li><strong>Zéro « moi-je ».</strong> On parle des tables, des couleurs et du service, pas de soi.</li>
+          <li><strong>Une idée, une image.</strong> Un post ne dit qu'une chose.</li>
+          <li><strong>Des faits visibles.</strong> Couleurs, formats, usages, coulisses.</li>
+          <li><strong>Une invitation à la fin.</strong> Écrire à Eric, rien de plus.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:1.5rem;margin-bottom:14px">Une banque de phrases d'accroche</h3>
+        <div class="filters" role="group" aria-label="Filtrer les accroches" id="filters"></div>
+        <div class="hooks" id="hooks"></div>
+        <p class="cap" style="color:var(--muted)">Ce sont des pistes : chaque texte final est validé par toi avant publication.</p>
+      </div>
+    </div>
+    <div class='example example--li'>
+      <p class='eyebrow'>Exemple de post LinkedIn</p>
+      <p class='lead'>Ce ne sont que des exemples, pour donner une idée : les textes et les visuels changeront.</p>
+      <div>
+        
+        <article class="mock">
+          <header><div class="av">N</div><div><strong>Natspirit</strong><span>Vaisselle de service professionnelle</span></div></header>
+          <div class="txt">
+            <p><strong>Oui, on est sur LinkedIn. Non, on ne vous annonce aucune « belle nouvelle ».</strong></p>
+            <p>Natspirit, c'est de la vaisselle de service professionnelle, en résine, en émail et en silicone, avec beaucoup de couleurs. Ici, on vous montrera la gamme, les formats et, de temps en temps, les coulisses de notre création.</p>
+            <p>Promis : des photos, des formats, et le moins de jargon possible.</p>
+            <p>Vous préparez un catalogue ou vous accompagnez des établissements dans le choix de leur vaisselle ? Écrivez-nous : contact@nat-spirit.com</p>
+          </div>
+          <img src="celadon.jpg" alt="Assiettes et bols céladon de la collection Origin sur une nappe verte, avec des asperges" width="1000" height="1033">
+        </article>
+        <p class="cap"><strong>Objectif :</strong> se présenter. <strong>Cible :</strong> marketing, achats et commerciaux des distributeurs. <strong>Appel à l'action :</strong> écrire à Natspirit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class='band' id='format'>
+  <div class='wrap'>
+    <div class='head'>
+      <p class='eyebrow'>Notre format sur Instagram</p>
+      <h2>Des scènes qu'on reconnaît, des couleurs qui ont du caractère.</h2>
+      <p class='lead'>Du fun, de la couleur, et des situations que tous les gens du métier ont vécues. Chaque post fait sourire, puis retombe sur la vaisselle de Natspirit. Tout se prépare à partir de tes photos, en montage : tu n'as rien à filmer.</p>
+    </div>
+    <div class='series'>
+      <article class='serie s1'><span class='tag'>Série 1 · carrousel ou Reel</span><h3>Scènes de service</h3><p>Une scène que tout le monde du métier reconnaît, une photo de la gamme, et une chute qui retombe sur la vaisselle.</p><p class='q'>Attention, l'assiette est chaude. <em>Le client la touche.</em></p><p class='who'><strong>Qui ça touche :</strong> restaurateurs, serveurs, hôteliers, traiteurs.</p>
+        <details class='why'><summary>Pourquoi ça marche</summary><p>C'est un mème : une situation vécue par tout le monde du métier, avec une chute. Ce genre de post se partage énormément. Quand un serveur l'envoie à un collègue en disant « c'est nous », Instagram le voit : le nombre d'envois en message privé fait partie des signaux de classement qu'Instagram met le plus en avant, et un post très envoyé peut être montré à plus de monde dans le même milieu. Pour Natspirit, c'est une façon de se faire connaître de restaurateurs et d'hôteliers qui ne connaissent pas la marque, sans parler de vaisselle pendant trois lignes. La gamme apparaît dans chaque post, et la chute y ramène toujours.</p></details></article>
+      <article class='serie s2'><span class='tag'>Série 2 · post</span><h3>Signe particulier</h3><p>Chaque couleur de la gamme devient un personnage : une fiche, une phrase de caractère.</p><p class='q'>Terracotta. Signe particulier : fait toujours trop à manger.</p><p class='who'><strong>Qui ça touche :</strong> restaurateurs et hôteliers qui choisissent leurs couleurs, marketing des distributeurs en quête de visuels.</p>
+        <details class='why'><summary>Pourquoi ça marche</summary><p>Un visuel simple, très coloré, qu'on reconnaît d'un coup d'œil dans le fil. Au bout de quelques semaines, on identifie Natspirit à ses fiches avant même de lire le nom. Chaque fiche montre aussi une couleur de la gamme : c'est un catalogue qui ne ressemble pas à un catalogue, et on a envie de voir les autres. Les fiches sont courtes, donc faciles à garder et à partager.</p></details></article>
+      <article class='serie s3'><span class='tag'>Série 3 · story + Reel</span><h3>Le débat</h3><p>Les grands débats du métier, à trancher en un clic. Le résultat finit en Reel.</p><p class='q'>Team assiette creuse ou team assiette plate ?</p><p class='who'><strong>Qui ça touche :</strong> toute l'équipe, de la salle à la cuisine.</p>
+        <details class='why'><summary>Pourquoi ça marche</summary><p>Un sondage en story se clique en une seconde. Même avec peu d'abonnés, on obtient des réponses, ce qu'une question ouverte ne donne presque jamais. On voit aussi qui répond (restaurateurs, hôteliers, distributeurs), donc à qui parler ensuite. Le résultat devient un Reel (« vous avez voté, voici le verdict ») : le débat dure toute la semaine et installe un rendez-vous.</p></details></article>
+      <article class='serie s4'><span class='tag'>Quand tu as des croquis</span><h3>Du croquis à la table</h3><p>Un dessin, une pièce, une table. Seulement si tu as des croquis ou des photos à partager.</p><p class='q'>Un crayon, un dessin, et ce bol.</p>
+        <details class='why'><summary>Pourquoi ça marche</summary><p>Montrer comment naît une pièce rassure les distributeurs : on voit une vraie marque de design, avec une idée derrière chaque objet. Ce contenu n'est publié que si tu as de quoi le montrer.</p></details></article>
+    </div>
+    <h3 style='font-size:1.5rem;margin-top:44px'>Les fiches « Signe particulier »</h3>
+    <div class='fiches'>
+      <div class='fiche f1'><b>Terracotta</b><span>Signe particulier : fait toujours trop à manger.</span></div>
+      <div class='fiche f2'><b>Céladon</b><span>Signe particulier : a l'air d'être en vacances, même un samedi soir.</span></div>
+      <div class='fiche f3'><b>Carbone</b><span>Signe particulier : ne dit rien, mais tout le monde le regarde.</span></div>
+      <div class='fiche f4'><b>Crème</b><span>Signe particulier : s'entend avec tout le monde.</span></div>
+    </div>
+    <h3 style='font-size:1.5rem;margin-top:44px'>Les stories : cinq rendez-vous</h3>
+    <p class='lead' style='margin-top:8px'>Huit stories par semaine, toutes à un clic : sondages, quiz, résultats. Jamais de question ouverte : avec un petit compte, personne n'écrit, tout le monde clique.</p>
+    <div class='fmts'>
+      <div class='fmt'><b>Team…</b><small>Lundi · creuse ou plate, le débat de la semaine</small></div>
+      <div class='fmt'><b>Quel bol pour… ?</b><small>Mardi · par exemple des lentilles, trois couleurs à cliquer</small></div>
+      <div class='fmt'><b>Sauce à part ou dessus ?</b><small>Mercredi · un débat de service, puis le résultat</small></div>
+      <div class='fmt'><b>La scène de la semaine</b><small>Jeudi · on relaie le post de la semaine</small></div>
+      <div class='fmt'><b>Dites « bol »</b><small>Vendredi · un mot en message, le catalogue arrive</small></div>
+    </div>
+    <div class='drawbox'>
+      <button type='button' class='btn btn--fill' id='draw'>Tirer un sondage</button>
+      <div class='drawn' id='drawn' aria-live='polite'>Clique pour piocher un sondage.</div>
+    </div>
+    <div class='example example--ig'>
+      <p class='eyebrow'>Exemple de post Instagram</p>
+      <p class='lead'>Ce ne sont que des exemples, pour donner une idée : les textes et les visuels changeront.</p>
+      <div>
+        
+        <article class="mock mock--ig">
+          <header><div class="av">N</div><div><strong>natspirit_official</strong><span>Natspirit</span></div></header>
+          <img src="celadon.jpg" alt="Assiettes et bols céladon de la collection Origin sur une nappe verte, avec des asperges" width="1000" height="1033">
+          <div class="txt" style="padding-top:14px">
+            <p><strong>Attention, l'assiette est chaude. <em>Le client la touche.</em></strong></p>
+            <p>On ne peut rien contre la curiosité. On peut juste vous faire de jolies assiettes, en quatre couleurs avec la collection Origin.</p><p>Le catalogue ? Dites juste « bol » en message privé.</p>
+            <p style="color:#6B5F5E">#vaisselleprofessionnelle #artsdelatable #restauration #hôtellerie #CHR</p>
+          </div>
+        </article>
+        <p class="cap"><strong>Série :</strong> Scènes de service (carrousel de 3 images : la phrase, la photo, la chute). <strong>Objectif :</strong> faire sourire, faire s'arrêter et faire découvrir la palette. <strong>Cible :</strong> restaurateurs, hôteliers, traiteurs. <strong>Appel à l'action :</strong> écrire « bol » en message privé pour recevoir le catalogue.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="calendrier">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Calendrier</p>
+      <h2>Semaine après semaine.</h2>
+      <p class="lead">Ce calendrier est un exemple : il va sûrement bouger au fil des semaines, selon ce qui marche et tes retours. Chaque thème devient un contenu complet dans Notion : objectif, cible, accroche, texte, appel à l'action et visuel. Les huit stories par semaine suivent cinq rendez-vous fixes, présentés plus haut. Les séries Instagram portent les noms de la section « Notre format ».</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filtrer le calendrier" id="calfilters"></div>
+    <div class="months" id="months"></div>
+    <div class="rhythm" aria-label="Une semaine type">
+      <div><b>Lundi</b>Engagement Instagram, 2 stories : Team… (le débat de la semaine) et une photo de la gamme</div>
+      <div><b>Mardi</b>Post LinkedIn, engagement LinkedIn, 2 stories : Quel bol pour… ? puis le résultat</div>
+      <div><b>Mercredi</b>Engagement Instagram, 2 stories : sauce à part ou dessus ? puis le résultat</div>
+      <div><b>Jeudi</b>Post Instagram, engagement LinkedIn, 1 story : relais du post</div>
+      <div><b>Vendredi</b>1 story : dites « bol » pour le catalogue ; point de la semaine</div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--surface" id="mesure">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Comment on mesure</p>
+      <h2>Des demandes, pas seulement des likes.</h2>
+    </div>
+    <div class="metric">
+      <article class="card card--o"><h3>Ce qui compte</h3><p>Une demande de devis ou d'échantillons reçue par mail. C'est ce que tu attends à trois mois : que ça bouge.</p></article>
+      <article class="card card--c"><h3>Ce qu'on regarde en plus</h3><p>Les messages reçus, les personnes des distributeurs qui se connectent ou répondent, les abonnés de la page et du compte Instagram.</p></article>
+      <article class="card card--t"><h3>Pour que ça marche</h3><p>Quand tu réponds à une demande, demande « comment nous avez-vous connus ? » et dis-moi si c'est Instagram ou LinkedIn.</p></article>
+    </div>
+    <p class="lead">Premier relevé le 9 novembre. Bilan d'une page le 8 décembre, le 8 janvier et le 8 février.</p>
+  </div>
+</section>
+
+<footer class="wrap end">Préparé par Juliette Farandou, community manager · 29 octobre 2026</footer>
+
+<script>
+(function(){
+  /* Onglets des publics */
+  var tabs=[document.getElementById('tab-li'),document.getElementById('tab-ig')];
+  var pans=[document.getElementById('pan-li'),document.getElementById('pan-ig')];
+  function showTab(i){
+    tabs.forEach(function(t,k){t.setAttribute('aria-selected',k===i?'true':'false');t.tabIndex=k===i?0:-1;});
+    pans.forEach(function(p,k){p.hidden=k!==i;});
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){showTab(i);});
+    t.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'||e.key==='ArrowLeft'){var j=(i+1)%2;showTab(j);tabs[j].focus();}
+    });
+  });
+  showTab(0);
+
+  /* Forfait */
+  var items=[
+    {n:4,t:'posts LinkedIn',per:'par mois',tot:12},
+    {n:4,t:'posts Instagram',per:'par mois',tot:12},
+    {n:2,t:'Reels',per:'par mois',tot:6},
+    {n:8,t:'stories',per:'par semaine',tot:104},
+    {n:2,t:'sessions d\'engagement LinkedIn',per:'par semaine',tot:26},
+    {n:2,t:'sessions d\'engagement Instagram',per:'par semaine',tot:26}
+  ];
+  var nums=document.getElementById('nums');
+  var bR=document.getElementById('m-rythme'),bT=document.getElementById('m-total');
+  function drawNums(total){
+    nums.innerHTML='';
+    items.forEach(function(it){
+      var d=document.createElement('div');d.className='num';
+      var s=document.createElement('strong');s.textContent=total?it.tot:it.n;
+      var a=document.createElement('span');a.textContent=it.t;
+      var b=document.createElement('small');b.textContent=total?'sur les 3 mois':it.per;
+      d.appendChild(s);d.appendChild(a);d.appendChild(b);nums.appendChild(d);
+    });
+    bR.setAttribute('aria-pressed',total?'false':'true');
+    bT.setAttribute('aria-pressed',total?'true':'false');
+  }
+  bR.addEventListener('click',function(){drawNums(false);});
+  bT.addEventListener('click',function(){drawNums(true);});
+  drawNums(false);
+
+  /* Banque d'accroches */
+  var hooks=[
+    {k:'li',t:'Spoiler : la vaisselle de buffet n\'est pas obligée d\'être beige.',n:'Post de présentation'},{k:'li',t:'Oui, on est sur LinkedIn. Non, on ne vous annonce aucune « belle nouvelle ».',n:'Premier post, avec humour'},{k:'li',t:'Une vaisselle de service peut avoir du caractère.',n:'Post de présentation, version sobre'},
+    {k:'li',t:'Quatre matières, sept collections, un fil conducteur : la couleur.',n:'Carrousel gamme'},
+    {k:'li',t:'D\'une esquisse à une pièce : dans les coulisses de notre studio.',n:'Studio'},
+    {k:'li',t:'Un buffet, ce sont d\'abord des formats : du gastro-norme 1/1 au 1/4.',n:'Formats'},
+    {k:'li',t:'Préparer un catalogue, c\'est choisir ce qui se montre en une seule photo.',n:'Pour le marketing'},
+    {k:'li',t:'Réassort : une référence, un conditionnement, un code.',n:'Pour les achats'},
+    {k:'li',t:'Trois questions qu\'un client pose sur sa vaisselle, trois réponses.',n:'Pour les commerciaux'},
+    {k:'ig',t:'Quatre couleurs, une seule table.',n:'Palette'},
+    {k:'ig',t:'Terracotta, céladon, crème, carbone : à vous de mélanger.',n:'Palette'},
+    {k:'ig',t:'Dressez, empilez, servez.',n:'Gestes de service'},
+    {k:'ig',t:'Le petit-déjeuner du buffet, version couleur.',n:'Hôtels'},
+    {k:'ig',t:'Du croquis à l\'objet : le studio sur-mesure.',n:'Studio'},
+    {k:'ig',t:'Ce plat méritait un bol de cette couleur.',n:'Dressage'},
+    {k:'st',t:'La couleur de la semaine : terracotta.',n:'Story du lundi'},
+    {k:'st',t:'Dans les coulisses aujourd\'hui.',n:'Story du mardi'},
+    {k:'st',t:'Votre terrasse a une couleur. Laquelle ?',n:'Sondage du mercredi'},
+    {k:'st',t:'Un catalogue ? Écrivez-nous en message.',n:'Story du vendredi'},
+    {k:'cta',t:'Écrivez-moi : contact@nat-spirit.com',n:'LinkedIn'},
+    {k:'cta',t:'Demandez le catalogue en message privé.',n:'Instagram'},
+    {k:'cta',t:'Un concept en tête ? Parlez-nous de votre projet.',n:'Studio sur-mesure'}
+  ];
+  hooks=[
+    {k:'li',t:'Oui, on est sur LinkedIn. Non, on ne vous annonce aucune « belle nouvelle ».',n:'Premier post'},
+    {k:'li',t:'Je n\'aime pas trop LinkedIn. J\'aime beaucoup les tables bien dressées.',n:'Dans ta voix · à valider par toi'},
+    
+    {k:'li',t:'Une vaisselle de service peut avoir du caractère.',n:'Version sobre'},
+    {k:'li',t:'Sept collections, un fil conducteur : la couleur.',n:'La gamme'},
+    {k:'li',t:'Un client cherche de la couleur pour sa table ? Voici quatre idées.',n:'Pour les commerciaux et le marketing'},
+    {k:'li',t:'Des boîtes de 2 à 12 pièces : commander simple.',n:'Pour les achats'},
+    {k:'ig',t:'Attention, l\'assiette est chaude. *Le client la touche.*',n:'Scènes de service'},
+    {k:'ig',t:'Le client photographie son plat pendant 4 minutes. Le plat : « J\'étais chaud, avant. »',n:'Scènes de service'},
+    {k:'ig',t:'Chef : « Tu me dresses 80 assiettes en 10 minutes. »',n:'Scènes de service · Reel'},
+    {k:'ig',t:'Sauce à part, s\'il vous plaît.',n:'Scènes de service'},
+    {k:'ig',t:'Réservation pour 6. Ils arrivent à 11.',n:'Scènes de service'},
+    {k:'ig',t:'Terracotta. Signe particulier : fait toujours trop à manger.',n:'Signe particulier'},
+    {k:'ig',t:'Céladon. Signe particulier : a l\'air d\'être en vacances, même un samedi soir.',n:'Signe particulier'},
+    {k:'ig',t:'Carbone. Signe particulier : ne dit rien, mais tout le monde le regarde.',n:'Signe particulier'},
+    {k:'ig',t:'Crème. Signe particulier : s\'entend avec tout le monde.',n:'Signe particulier'},
+    {k:'st',t:'Team assiette creuse ou team assiette plate ?',n:'Lundi'},
+    {k:'st',t:'Quel bol pour des lentilles ? Terracotta, céladon ou carbone.',n:'Mardi'},
+    {k:'st',t:'Sauce à part ou sauce dessus ?',n:'Mercredi'},
+    {k:'st',t:'Un seul mot, « bol », et le catalogue arrive en message.',n:'Vendredi'},
+    {k:'cta',t:'Écrivez-nous : contact@nat-spirit.com',n:'LinkedIn'},
+    {k:'cta',t:'Envie du catalogue ? Dites juste « bol » en message privé.',n:'Instagram'},
+    {k:'cta',t:'Un concept en tête ? Parlez-nous de votre projet.',n:'Projet sur-mesure'}
+  ];
+  var cats=[['all','Tout'],['li','LinkedIn'],['ig','Instagram'],['st','Stories'],['cta','Appels à l\'action']];
+  var cur='all';
+  var fEl=document.getElementById('filters'),hEl=document.getElementById('hooks');
+  function drawFilters(){
+    fEl.innerHTML='';
+    cats.forEach(function(c){
+      var b=document.createElement('button');b.type='button';b.className='f';b.textContent=c[1];
+      b.setAttribute('aria-pressed',cur===c[0]?'true':'false');
+      b.addEventListener('click',function(){cur=c[0];drawFilters();drawHooks();});
+      fEl.appendChild(b);
+    });
+  }
+  function copyText(text,btn){
+    function ok(){btn.textContent='Copié';btn.classList.add('ok');setTimeout(function(){btn.textContent='Copier';btn.classList.remove('ok');},1600);}
+    function fail(){btn.textContent='Sélectionne le texte';setTimeout(function(){btn.textContent='Copier';},2200);}
+    try{
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(ok,fail);}else{fail();}
+    }catch(e){fail();}
+  }
+  function drawHooks(){
+    hEl.innerHTML='';
+    hooks.filter(function(h){return cur==='all'||h.k===cur;}).forEach(function(h){
+      var d=document.createElement('div');d.className='hook';
+      var w=document.createElement('div');
+      var p=document.createElement('p');p.textContent=h.t;
+      var s=document.createElement('small');s.textContent=h.n;
+      w.appendChild(p);w.appendChild(s);
+      var b=document.createElement('button');b.type='button';b.className='copy';b.textContent='Copier';
+      b.addEventListener('click',function(){copyText(h.t,b);});
+      d.appendChild(w);d.appendChild(b);hEl.appendChild(d);
+    });
+  }
+  drawFilters();drawHooks();
+
+  /* Calendrier */
+  var cal=[
+    {m:1,d:'9 – 15 nov',li:'Présentation de Natspirit : « Oui, on est sur LinkedIn »',ig:'Scènes de service : « Attention, l\'assiette est chaude »'},
+    {m:1,d:'16 – 22 nov',li:'Carrousel : 7 collections en un coup d\'œil',ig:'Signe particulier : le terracotta',re:'Chef, 80 assiettes en 10 minutes (montage photos)'},
+    {m:1,d:'23 – 29 nov',li:'Buffet, petit-déjeuner, terrasse : trois façons d\'utiliser la gamme',ig:'Scènes de service : le plat photographié pendant 4 minutes'},
+    {m:1,d:'30 nov – 6 déc',li:'Comment naît une pièce : du croquis à la table (si tu as des croquis)',ig:'Signe particulier : le céladon',re:'Team assiette creuse ou plate (montage photos)'},
+    {m:2,d:'7 – 13 déc',li:'Mode d\'emploi : une matière, un usage',ig:'Scènes de service : le couvercle de bac qui manque'},
+    {m:2,d:'14 – 20 déc',li:'Saison des fêtes : buffets et services de groupe',ig:'Signe particulier : le carbone',re:'Réservation pour 6, ils arrivent à 11 (montage photos)'},
+    {m:2,d:'21 – 27 déc',li:'Les vœux de Natspirit',ig:'Les vœux : la palette de l\'année'},
+    {m:2,d:'28 déc – 3 jan',pause:'Pause des fêtes : stories programmées, pas de post.'},
+    {m:2,d:'4 – 10 jan',li:'Ce qui arrive en 2027',ig:'Signe particulier : la crème',re:'Sauce à part ou sauce dessus ? (montage photos)',need:'li'},
+    {m:3,d:'11 – 17 jan',li:'Un concept, une vaisselle sur-mesure (sans nommer de client)',ig:'Scènes de service : trois croissants « pour plus tard »',need:'li'},
+    {m:3,d:'18 – 24 jan',li:'Un client cherche de la couleur ? Quatre idées pour sa table',ig:'Signe particulier : le rouge rubis (Smalta)',re:'Quel bol pour des lentilles ? (montage photos)'},
+    {m:3,d:'25 – 31 jan',li:'Des boîtes de 2 à 12 : commander simple',ig:'Signe particulier : l\'émeraude (Smalta)'},
+    {m:3,d:'1 – 8 fév',li:'Bilan de la saison et invitation à demander le catalogue',ig:'Récapitulatif : les couleurs de la saison',re:'Le meilleur des 3 mois'}
+  ];
+  var needTxt={li:'Besoin de toi : ce que tu veux annoncer, ou ton accord',re:'Besoin de toi : des vidéos ou croquis du studio'};
+  var months={1:'Mois 1 · 9 novembre – 8 décembre',2:'Mois 2 · 9 décembre – 8 janvier',3:'Mois 3 · 9 janvier – 8 février'};
+  var calCats=[['all','Tout'],['li','LinkedIn'],['ig','Instagram'],['re','Reels']];
+  var curCal='all';
+  var openM={1:true,2:false,3:false};
+  var cfEl=document.getElementById('calfilters'),mEl=document.getElementById('months');
+  function item(cls,label,text,extra){
+    var d=document.createElement('div');
+    if(!text){d.className='it it--none';d.textContent='–';d.setAttribute('aria-label','Rien cette semaine');return d;}
+    d.className='it it--'+cls;
+    var s=document.createElement('small');s.textContent=label;d.appendChild(s);
+    d.appendChild(document.createTextNode(text));
+    if(extra){var n=document.createElement('span');n.className='need';n.textContent=extra;d.appendChild(document.createElement('br'));d.appendChild(n);}
+    return d;
+  }
+  function drawCal(){
+    cfEl.innerHTML='';
+    calCats.forEach(function(c){
+      var b=document.createElement('button');b.type='button';b.className='f';b.textContent=c[1];
+      b.setAttribute('aria-pressed',curCal===c[0]?'true':'false');
+      b.addEventListener('click',function(){curCal=c[0];drawCal();});
+      cfEl.appendChild(b);
+    });
+    mEl.innerHTML='';
+    [1,2,3].forEach(function(m){
+      var sec=document.createElement('div');sec.className='month';
+      var h=document.createElement('h3');var hb=document.createElement('button');hb.type='button';hb.className='mbtn';hb.setAttribute('aria-expanded',openM[m]?'true':'false');hb.textContent=(openM[m]?'− ':'+ ')+months[m];hb.addEventListener('click',function(){openM[m]=!openM[m];drawCal();});h.appendChild(hb);sec.appendChild(h);
+      var wk=document.createElement('div');wk.className='weeks';
+      cal.filter(function(w){return w.m===m;}).forEach(function(w){
+        var row=document.createElement('div');row.className='wk';
+        var t=document.createElement('time');t.textContent=w.d;row.appendChild(t);
+        if(w.pause){var p=document.createElement('div');p.className='pause';p.textContent=w.pause;row.appendChild(p);}
+        else{
+          if(curCal==='all'||curCal==='li')row.appendChild(item('li','LinkedIn',w.li,w.need==='li'?needTxt.li:''));
+          if(curCal==='all'||curCal==='ig')row.appendChild(item('ig','Instagram',w.ig,''));
+          if(curCal==='all'||curCal==='re')row.appendChild(item('re','Reel',w.re,w.need==='re'?needTxt.re:''));
+        }
+        if(curCal!=='all'){row.style.gridTemplateColumns='130px 1fr';}
+        wk.appendChild(row);
+      });
+      if(openM[m])sec.appendChild(wk);mEl.appendChild(sec);
+    });
+  }
+  drawCal();
+
+  /* Curseur de présence */
+  var lv=[
+    {t:'Niveau 1 · Page seule',tag:'Le plus tranquille',d:'Natspirit parle et les objets sont les stars. Aucun visage, aucune histoire perso.',ex:'« Spoiler : la vaisselle de buffet n\'est pas obligée d\'être beige. »',me:'Tu valides, c\'est tout.',note:'Ça démarre plus doucement : on suit souvent plus volontiers des personnes que des pages.'},
+    {t:'Niveau 2 · Ta voix',tag:'Pour démarrer',d:'La page publie, et de temps en temps on glisse une phrase de toi entre guillemets, une main, une photo de dos ou un coin de studio. Tu es là, sans être en vitrine.',ex:'« Je n\'aime pas trop LinkedIn. J\'aime beaucoup les tables bien dressées. » — Eric',me:'Une phrase à valider de temps en temps. Tu peux la refuser, on en propose une autre.',note:'C\'est le bon compromis pour essayer sans se sentir exposé.'},
+    {t:'Niveau 3 · Ton profil, un post par mois',tag:'Un peu plus de toi',d:'Un post par mois sur ton profil, avec humour : une anecdote de métier, un avis franc. Pas de CV, pas de « ravi d\'annoncer ». Les autres posts restent sur la page.',ex:'« Mon avis sur les buffets tout beiges : ils méritent un peu de couleur. »',me:'Une relecture par mois. On décide ensemble comment le post est publié.',note:'On y passe seulement si le niveau 2 te plaît.'},
+    {t:'Niveau 4 · Ton profil, deux posts par mois',tag:'Pour aller plus loin',d:'Deux posts par mois sur ton profil, toujours drôles et jamais « moi-je » : le métier d\'abord, toi en filigrane. La page relaie et publie le reste.',ex:'« Chaque buffet pose la même question : on met quelle couleur ? »',me:'Deux relectures par mois.',note:'À réserver au moment où tu t\'amuses sur LinkedIn.'}
+  ];
+  var lvEl=document.getElementById('lvl'),lvOut=document.getElementById('lvl-out');
+  function drawLvl(){
+    var x=lv[parseInt(lvEl.value,10)-1];
+    lvOut.innerHTML='';
+    function add(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;e.textContent=txt;lvOut.appendChild(e);return e;}
+    add('span','tagr',x.tag);
+    add('h3','',x.t);
+    add('p','',x.d);
+    add('p','ex',x.ex);
+    var a=add('p','row','');var s1=document.createElement('strong');s1.textContent='Pour toi : ';a.appendChild(s1);a.appendChild(document.createTextNode(x.me));
+    add('p','row',x.note);
+  }
+  lvEl.addEventListener('input',drawLvl);
+  drawLvl();
+
+  /* Pioche de stories */
+  var ideas=[
+    'Team assiette creuse ou team assiette plate ?',
+    'Sauce à part ou sauce dessus ?',
+    'Quel bol pour des lentilles ? Trois couleurs à cliquer.',
+    'Quel bol pour une salade de tomates ? Trois couleurs à cliquer.',
+    'Dites « bol » : un mot en message et le catalogue arrive.'
+  ];
+  var last=-1,dBtn=document.getElementById('draw'),dOut=document.getElementById('drawn');
+  dBtn.addEventListener('click',function(){
+    var i;do{i=Math.floor(Math.random()*ideas.length);}while(i===last);
+    last=i;dOut.textContent=ideas[i];
+  });
+
+
+  /* Navigation : défilement fiable dans la page publiée */
+  Array.prototype.forEach.call(document.querySelectorAll('.nav a[href^="#"]'),function(a){
+    a.addEventListener('click',function(ev){
+      var id=a.getAttribute('href').slice(1);
+      var target=document.getElementById(id);
+      if(!target)return;
+      ev.preventDefault();
+      try{target.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){target.scrollIntoView();}
+    });
+  });
+
+  /* Lien actif dans la navigation */
+  try{
+    var links=Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+    var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){
+        es.forEach(function(en){
+          if(en.isIntersecting){
+            var i=secs.indexOf(en.target);
+            links.forEach(function(a,k){a.classList.toggle('on',k===i);});
+          }
+        });
+      },{rootMargin:'-30% 0px -60% 0px'});
+      secs.forEach(function(s){if(s)io.observe(s);});
+    }
+  }catch(e){}
+})();
+</script>
+
+</body>
+</html>
